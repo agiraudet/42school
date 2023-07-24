@@ -1,0 +1,76 @@
+version: "3"
+
+services:
+  mariadb:
+    build: 
+      context:
+        mariadb/
+      args:
+        DB_NAME: ${DB_NAME}
+        MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+        MYSQL_USER: ${MYSQL_USER}
+        MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    container_name: mariadb
+    restart: always
+    networks:
+      - dknet
+    volumes:
+      - mariadb_vol:/var/lib/mysql/
+
+  wp:
+    env_file:
+      .env
+    build:
+      context:
+        wordpress/
+      args:
+        MYSQL_HOST: ${MYSQL_HOST}
+        DB_NAME: ${DB_NAME}
+        MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+        MYSQL_USER: ${MYSQL_USER}
+        MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+        DOMAIN_NAME: ${DOMAIN_NAME}
+        WP_ADMIN: ${WP_ADMIN}
+        WP_ADMIN_PASSWORD: ${WP_ADMIN_PASSWORD}
+        WP_USER: ${WP_USER}
+        WP_PASSWORD: ${WP_PASSWORD}
+    container_name: wordpress
+    restart: always
+    networks:
+      - dknet
+    volumes:
+      - wp_vol:/var/www/:z
+    depends_on:
+      - mariadb
+
+  nginx:
+    build:
+      context:
+        nginx/
+    container_name: nginx
+    restart: always
+    ports:
+      - "443:443"
+    networks:
+      - dknet
+    volumes:
+      - wp_vol:/var/www/:z
+    depends_on:
+      - wp
+
+
+volumes:
+  mariadb_vol:
+    driver_opts:
+      type: none
+      device: /home/agiraude/data/db
+      o: bind
+  wp_vol:
+    driver_opts:
+      type: none
+      device: /home/agiraude/data/wp
+      o: bind
+
+networks:
+  dknet:
+    driver: bridge

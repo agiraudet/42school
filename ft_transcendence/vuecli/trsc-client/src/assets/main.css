@@ -1,0 +1,79 @@
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	
+}
+  
+#app {
+	position: relative;
+	min-height: 100vh;
+	height: auto;
+  	width: auto;
+	background-color: #000000;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	/* justify-content: center; */
+	align-items: center;
+	color: white;
+	font-family: poppins, sans-serif;
+	font-weight: 500;
+}
+
+.button-3d {
+	padding: 8px 22px;
+	border-radius: 35px;
+	border: 1px solid #000;
+	background: #FFF;
+	box-shadow: 2px 4px 0px 0px #F800F8;
+	transition: all 100ms ease-out;
+	cursor: pointer;
+	font-family: poppins, sans-serif;
+	font-weight: 600;
+	font-size: 16px;
+	text-decoration: none;
+	color: black;
+}
+
+
+.button-3d:hover {
+	background: #FFF;
+	box-shadow: 0px 0px 0px 0px #F800F8;
+	transform: translate(3px, 5px); /* Utilisation de la transformation translate pour deplacer l'element */
+	transition: all 100ms ease-out;
+}
+
+button {
+	display: inline-flex;
+	padding: 8px 14px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+	border: 1px solid #FFF;
+	background: #121212;
+	color: white;
+	cursor: pointer;
+	font-family: poppins, sans-serif;
+	font-weight: 600;
+	font-size: 14px;
+	transition: 100ms ease-out;
+}
+
+button:hover {
+	background: #262626;
+}
+
+input {
+	padding: 0 10px;
+	width: 280px;
+	height: 40px;
+	border-radius: 10px;
+	border: 1px solid #FFF;
+	background: #262626;
+	color: white;
+}
+
+input:focus {
+	outline: none;
+}

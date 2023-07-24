@@ -1,0 +1,27 @@
+R 1032 516
+
+NO ./tex/ancient_debris_side.xpm
+SO ./tex/bricks.xpm
+WE ./tex/red_sandstone.xpm
+EA ./tex/smoker_bottom.xpm
+S ./tex/pnj.xpm
+
+SA ./tex/pnj.xpm
+SB ./tex/pnj_red.xpm
+BG ./tex/night3.xpm
+TF ./tex/smithing_table_bottom.xpm
+
+F 117,     142, 79
+C 135, 245,         251
+
+11111111
+10000001
+100E0001
+1000000111111111111
+1000000000000000001
+1000000000000200001
+1000020000000000001
+1111111100000000001
+       100000000001
+       120000000001
+       111111111111

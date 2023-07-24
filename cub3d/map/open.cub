@@ -1,0 +1,21 @@
+R 640 480
+
+NO ./tex/stone_bricks.xpm
+SO ./tex/smoker_bottom.xpm
+WE ./tex/sandstone.xpm
+EA ./tex/red_sandstone.xpm
+S ./tex/pnj.xpm
+BG ./tex/bg.xpm
+TF ./tex/dark_oak_planks.xpm
+
+F 117, 142, 79
+C 135, 245, 251
+
+1111111111
+1000000001
+1111000001
+1000000001
+100N001001
+1020001021
+1000 01001
+1111111111

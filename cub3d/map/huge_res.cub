@@ -1,0 +1,20 @@
+R 2080 1400
+
+NO ./tex/quartz_block_top.xpm
+SO ./tex/quartz_pillar.xpm
+WE ./tex/quartz_pillar_top.xpm
+EA ./tex/smithing_table_bottom.xpm
+S ./tex/warped_roots.xpm
+TF ./tex/blast_furnace_side.xpm
+BG ./tex/bg.xpm
+
+F 117, 142, 79
+C 135, 245, 251
+
+11111111
+10000021
+11100001
+  100001
+11100N01
+10020001
+11111111

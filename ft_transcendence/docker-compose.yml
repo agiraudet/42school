@@ -1,0 +1,42 @@
+version: "3.9"
+
+services:
+  postgres:
+    build:
+      context: pgdb
+    env_file:
+      - .env
+    # volumes:
+    #   - ./pgdb/data:/var/lib/postgresql/data:z
+    networks:
+      - trsc-net
+    ports:
+      - 5432:5432
+    restart: always
+
+  nestjs-app:
+    build:
+      context: nestsrv
+    env_file:
+      - .env
+    networks:
+      - trsc-net
+    depends_on:
+      - postgres
+    ports:
+      - 3000:3000
+    restart: always
+
+  vue-client:
+    build:
+      context: vuecli
+    ports:
+      - 5173:5173
+      # - 5000:5000
+    networks:
+      - trsc-net
+    restart: always
+
+networks:
+  trsc-net:
+    driver: bridge

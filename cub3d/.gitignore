@@ -1,0 +1,7 @@
+*/*.a
+.test
+*/*.o
+*/*/*.o
+cub3d
+TODO
+test
